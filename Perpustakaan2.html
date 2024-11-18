@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERPUSTAKAAN SMAN 103</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and general styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+        }
+
+        /* Header */
+        header {
+            background-color: #2C3E50;
+            background-image: url(https://sman103jakarta.sch.id/po-content/themes/103baru/files/images/gallery/tentang-sma103jakarta.jpg?v=1502063308);
+            background-position: 100%;
+            background-size: 1300px;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #2C3E50;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #3498DB;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980B9;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        ul li {
+            padding: 5px;
+            background-color: #ECF0F1;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        ul li img {
+            width: 50px; 
+            height: 50px;
+            margin-right: 15px; 
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2C3E50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang Di Perpustakaan SMAN 103</h1>
+        <nav>
+            <ul>
+                <li><a href="#absen">Absensi</a></li>
+                <li><a href="#peminjaman">Peminjaman Buku</a></li>
+                <li><a href="#buku">Daftar Buku</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <footer>
+        <p>&copy; 2024 SMAN 103 | <a href="mailto:perpustakaan103jkt@gmail.com">perpustakaan103jkt@gmail.com</a></p>
+        <p>Ikuti kami di
+            <a href="https://twitter.com/sman103" target="_blank">Twitter</a>, 
+            <a href="https://www.instagram.com/smaseratustiga?igsh=MWZyMnM5MHgwcXcxaA==" target="_blank">Instagram</a>
+        </p>
+    </footer>
+    
+    <section id="absen">
+        <h2>Data Absensi Siswa</h2>
+        <form id="formAbsen">
+            <label for="nis">NIS:</label>
+            <input type="text" id="nis" name="nis" required>
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required>
+            <label for="status">Status Kehadiran:</label>
+            <select id="status" name="status">
+                <option value="Hadir">Hadir</option>
+                <option value="Tidak Hadir">Tidak Hadir</option>
+            </select>
+            <button type="submit">Kirim Absen</button>
+        </form>
+        <div id="absensiList">
+            <h3>Daftar Absensi</h3>
+            <ul id="absensiListDisplay"></ul>
+        </div>
+    </section>
+
+    <section id="peminjaman">
+        <h2>Peminjaman Buku</h2>
+        <form id="formPeminjaman">
+            <label for="nisPeminjam">NIS:</label>
+            <input type="text" id="nisPeminjam" name="nisPeminjam" required>
+            <label for="buku">Buku yang Dipinjam:</label>
+            <input type="text" id="buku" name="buku" required>
+            <button type="submit">Pinjam Buku</button>
+        </form>
+        <div id="peminjamanList">
+            <h3>Daftar Peminjaman Buku</h3>
+            <ul id="peminjamanListDisplay"></ul>
+        </div>
+    </section>
+
+    <section id="buku">
+        <h2>Daftar Buku Mata Pelajaran</h2>
+        <ul>
+            <li>
+                <img src="https://static.buku.kemdikbud.go.id/content/image/coverteks/coverkurikulum21/Matematika-BS-KLS-XI-cover.png">
+                Matematika - Buku A
+            </li>
+            <li>
+                <img src="https://static.buku.kemdikbud.go.id/content/image/coverteks/coverkurikulum21/Sosiologi-BS-KLS-XI-cover.png" alt="Sosiologi">
+                Sosiologi - Buku B
+            </li>
+            <li>
+                <img src="https://static.buku.kemdikbud.go.id/content/image/coverteks/coverkurikulum21/Bahasa-inggris-BS-KLS-XI-efc-Cover.png" alt="Bahasa Inggris">
+                Bahasa Inggris - Buku C
+            </li>
+            <li>
+                <img src="https://static.buku.kemdikbud.go.id/content/image/coverteks/coverkurikulum21/Ekonomi-BS-KLS-XI-cover.png" alt="Ekonomi">
+                Ekonomi - Buku D
+            </li>
+            <li>
+                <img src="https://static.buku.kemdikbud.go.id/content/image/coverteks/coverkurikulum21/Informatika-BS-KLS-XI-cover.png" alt="Informatika">
+                Informatika - Buku E
+            </li>
+            <li>
+                <img src="https://static.buku.kemdikbud.go.id/content/image/coverteks/coverkurikulum21/Sejarah-BS-KLS-XI-cover.png" alt="Sejarah">
+                Sejarah - Buku F
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 SMAN 103</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const absenForm = document.getElementById('formAbsen');
+            const peminjamanForm = document.getElementById('formPeminjaman');
+            const absenListDisplay = document.getElementById('absensiListDisplay');
+            const peminjamanListDisplay = document.getElementById('peminjamanListDisplay');
+ 
+            let absenData = [];
+            let peminjamanData = [];
+
+            absenForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const nis = document.getElementById('nis').value;
+                const nama = document.getElementById('nama').value;
+                const status = document.getElementById('status').value;
+
+                const absen = { nis, nama, status };
+                absenData.push(absen);
+
+                absenListDisplay.innerHTML = '';
+
+                function tampilkanAbsensi(index) {
+                    if (index >= absenData.length) return;
+                    const absen = absenData[index];
+                    const li = document.createElement('li');
+                    li.textContent = `NIS: ${absen.nis}, Nama: ${absen.nama}, Status: ${absen.status}`;
+                    absenListDisplay.appendChild(li);
+                    tampilkanAbsensi(index + 1);
+                }
+                tampilkanAbsensi(0);
+
+                absenForm.reset();
+            });
+
+            peminjamanForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const nisPeminjam = document.getElementById('nisPeminjam').value;
+                const buku = document.getElementById('buku').value;
+
+                const peminjaman = { nisPeminjam, buku };
+                peminjamanData.push(peminjaman);
+
+                peminjamanListDisplay.innerHTML = '';
+
+                function tampilkanPeminjaman(index) {
+                    if (index >= peminjamanData.length) return;
+                    const peminjaman = peminjamanData[index];
+                    const li = document.createElement('li');
+                    li.textContent = `NIS: ${peminjaman.nisPeminjam}, Buku: ${peminjaman.buku}`;
+                    peminjamanListDisplay.appendChild(li);
+                    tampilkanPeminjaman(index + 1);
+                }
+                tampilkanPeminjaman(0);
+
+                peminjamanForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Kontak</title>
+</head>
+<body>
+    <h1>Hubungi Kami</h1>
+<section id="kontak">
+    <form class="contact-form" id="contactForm">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Pesan:</label>
+        <textarea id="message" name="message" required></textarea>
+        
+        <button type="submit">Kirim</button>
+    </form>
+</section>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault()
+        
+        const name = encodeURIComponent(document.getElementById('name').value);
+        const email = encodeURIComponent(document.getElementById('email').value);
+        const message = encodeURIComponent(document.getElementById('message').value);
+
+        const whatsappMessage = `Halo, saya ${name}.%0AEmail: ${email}.%0APesan: ${message}`;
+
+        const whatsappUrl = `https://wa.me/6287743163004?text=${whatsappMessage}`;
+
+        window.open(whatsappUrl, '_blank');
+    });
+</script>
+
+    </form>
+</section>
+</body>
+</html>
+<style>
+    form {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+    }
+    label, input, textarea {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+    }
+    button {
+        display: block;
+        width: 100px; 
+        margin: 20px auto;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+    }
+</style>

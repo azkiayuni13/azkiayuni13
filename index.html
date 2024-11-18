@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website fasilitas kantin sekolah SMAN 103 Jakarta">
+    <meta name="author" content="SMAN 103 Jakarta">
+    <title>Kantin SMAN 103 Jakarta</title>
+    <!-- Link ke file CSS eksternal -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+
+    <!-- Header Transparan dengan Judul -->
+    <header class="transparent-header">
+        <h1>Kantin SMAN 103 Jakarta</h1>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" onclick="toggleMenu()">☰</button>
+    </header>
+
+    <!-- Navigasi Utama -->
+    <nav>
+        <ul id="navbar">
+            <li><a href="#gallery" class="nav-link">Galeri</a></li>
+            <li><a href="#testimoni" class="nav-link">Testimoni</a></li>
+            <li><a href="#menu" class="nav-link">Menu</a></li>
+            <li><a href="#kontak" class="nav-link">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- Galeri Foto -->
+    <section id="gallery">
+        <h2>Galeri Kantin</h2>
+        <div class="swiper-container"></div>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="foto1.jpg" alt="Foto Kantin 1" onclick="openLightbox(this.src)"></div>
+                <div class="swiper-slide"><img src="foto2.jpg" alt="Foto Kantin 2" onclick="openLightbox(this.src)"></div>
+                <div class="swiper-slide"><img src="foto3.jpg" alt="Foto Kantin 3" onclick="openLightbox(this.src)"></div>
+                <div class="swiper-slide"><img src="foto4.jpg" alt="Foto Kantin 4" onclick="openLightbox(this.src)"></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+
+    <!-- Lightbox Modal -->
+    <!-- <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" src="" alt="Expanded view of gallery image">
+    </div> -->
+
+    <!-- Testimoni Siswa -->
+    <section id="testimoni">
+        <h2>Testimoni Siswa</h2>
+        <div class="testimoni-item">
+            <p>"Kantin SMAN 103 selalu menyediakan makanan sehat dan enak!"</p>
+            <cite>- Siti, Kelas 11</cite>
+        </div>
+        <div class="testimoni-item">
+            <p>"Menu favorit saya adalah nasi goreng spesial! Harganya terjangkau dan porsinya cukup."</p>
+            <cite>- Budi, Kelas 12</cite>
+        </div>
+        <div class="testimoni-item">
+            <p>"Tempatnya bersih dan nyaman, sangat cocok untuk istirahat siang."</p>
+            <cite>- Lina, Kelas 10</cite>
+        </div>
+    </section>
+
+    <!-- Konten Utama -->
+    <main>
+        <section id="menu">
+            <h2>Menu Favorit</h2>
+            <p>Berikut adalah beberapa menu favorit di kantin kami:</p>
+            <ul>
+                <li>Nasi Goreng Spesial</li>
+                <li>Soto Ayam</li>
+                <li>Mie Goreng</li>
+                <li>Es Teh Manis</li>
+                <li>Jus Buah Segar</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Form Umpan Balik Siswa -->
+    <section id="feedback">
+        <center><h2>Umpan Balik Anda</h2></center>
+        <form id="feedbackForm" onsubmit="submitFeedback(event)">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required>
+            <label for="feedback">Saran atau Masukan:</label>
+            <textarea id="feedback" name="feedback" rows="4" required></textarea>
+            <button type="submit">Kirim</button>
+            <p id="feedbackMessage"></p>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h2>Kontak</h2>
+            <p>Alamat: Perumnas Klender, Jl. Mawar Merah VI, Malaka Jaya, Kec. Duren Sawit, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13460</p>
+            <p>Telepon: (021) 8622372</p>
+            <p>Website: https://sman103jakarta.sch.id/</p> 
+        </div>
+        <div class="footer-bar">
+            <p>&copy; 2023 Kantin SMAN 103 Jakarta. Semua Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

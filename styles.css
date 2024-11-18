@@ -1,0 +1,235 @@
+/* Root Variables for Colors and Consistency */
+:root {
+    --primary-color: #5cbeef;
+    --secondary-color: #4aa2d4;
+    --bg-color: #600101;
+    --hover-bg: #ffdede;
+    --text-color: #fff;
+    --highlight-bg: #e1f5fe;
+    --light-bg: #f4f8fc;
+}
+
+/* Header Styling */
+.transparent-header {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 40px 0;
+    font-size: 2em;
+    font-weight: bold;
+    position: relative;
+    z-index: 10;
+}
+
+/* Navigation Bar */
+nav {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #900303;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+nav ul li a:hover {
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+}
+
+/* Responsive Navigation */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
+    text-align: center;
+}
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+    }
+    .menu-toggle {
+        display: inline-block;
+    }
+    .menu-toggle.active + nav ul {
+        display: flex;
+    }
+}
+
+/* Swiper Gallery */
+.swiper-container {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    margin: 0 auto;
+}
+.swiper-slide img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.swiper-slide img:hover {
+    transform: scale(1.05);
+}
+.swiper-slide, .testimoni-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.swiper-slide:hover, .testimoni-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Lightbox Styling */
+#lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    margin: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+#lightbox img:hover {
+    transform: scale(1.02);
+}
+#lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: var(--text-color);
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* Feedback Form */
+#feedbackForm {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: var(--light-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#feedbackForm label, #feedbackForm input, #feedbackForm textarea {
+    width: 100%;
+    margin: 10px 0;
+}
+#feedbackForm button {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#feedbackForm button:hover, #feedbackForm button:focus {
+    background-color: var(--secondary-color);
+}
+
+/* Testimoni Section */
+#testimoni {
+    background-color: var(--light-bg);
+    padding: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.testimoni-item {
+    background-color: var(--highlight-bg);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+.testimoni-item p {
+    font-size: 1.1em;
+    color: #333;
+}
+.testimoni-item cite {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: var(--primary-color);
+    font-style: italic;
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px 0;
+}
+.footer-content {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.footer-content h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+.footer-content p {
+    font-size: 1em;
+    margin: 5px 0;
+}
+.footer-bar {
+    background-color: var(--hover-bg);
+    padding: 10px 0;
+}
+.footer-bar p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+.footer-bar p:hover {
+    color: var(--primary-color);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li a {
+        padding: 10px 0;
+        width: 100%;
+    }
+    .footer-content, .footer-bar, .testimoni-item, #feedbackForm {
+        padding: 10px;
+    }
+}
